@@ -1,0 +1,19 @@
+_schema-version: "2.1"
+ID: Test_OneFinanceDB
+version: 0.0.1
+modules:
+- name: ONEFIN_POC
+  type: hdb
+  path: db
+  requires:
+  - name: hdi_ONEFIN_POC
+    properties:
+      TARGET_CONTAINER: ~{hdi-container-name}
+resources:
+- name: hdi_ONEFIN_POC
+  type: com.sap.xs.hdi-container
+  parameters:
+    config:
+      database_id: 91ee1288-9a9e-4119-8236-3832d22d5459
+  properties:
+    hdi-container-name: ${service-name}
